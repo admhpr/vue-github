@@ -19,7 +19,6 @@
 
 <script>
 import parse from "github-calendar-parser";
-import { async } from "q";
 export default {
   name: "GithubActivityCalendar",
   props: {
@@ -30,8 +29,9 @@ export default {
   data: function() {
     return {
       loading: true,
-      calendar: "",
-      svg: ""
+      rawCalendar: "",
+      rawSvg: "",
+      builtCalendar: ""
     };
   },
   mounted() {
@@ -54,7 +54,7 @@ export default {
         .then(body => {
           this.setupCalendar(body);
           // If 'include-fragment' with spinner img loads instead of the svg, fetchCalendar again
-          if (this.calendar.querySelector("includes-fragment")) {
+          if (this.rawCalendar.querySelector("includes-fragment")) {
             setTimeout(this.fetchCalendar, 500);
           } else {
             this.renderCalendar();
@@ -64,17 +64,16 @@ export default {
     renderCalendar: async function() {
       await this.setupSvg();
       await this.parseSvg();
-      await this.buildCalendar();
     },
     setupCalendar: function(body) {
       let div = document.createElement("div");
       div.innerHTML = body;
       let cal = div.querySelector(".js-yearly-contributions");
       cal.querySelector(".float-left.text-gray").innerHTML = this.text;
-      this.calendar = cal;
+      this.rawCalendar = cal;
     },
     setupSvg: function() {
-      let svg = this.calendar.querySelector("svg.js-calendar-graph-svg");
+      let svg = this.rawCalendar.querySelector("svg.js-calendar-graph-svg");
       let width = svg.getAttribute("width");
       let height = svg.getAttribute("height");
       // Remove height property entirely
@@ -83,10 +82,15 @@ export default {
       svg.setAttribute("width", "100%");
       // Add a viewBox property based on the former width/height
       svg.setAttribute("viewBox", "0 0 " + width + " " + height);
-      this.svg = svg;
+      this.rawSvg = svg;
     },
-    parseSvg: function() {},
-    buildCalendar: function() {}
+    parseSvg: function() {
+      let parsed = parse(String(this.rawSvg.outerHTML));
+      this.buildCalendar(parsed);
+    },
+    buildCalendar: function(data) {
+      console.log(data);
+    }
   }
 };
 </script>
