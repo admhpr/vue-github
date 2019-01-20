@@ -1,82 +1,92 @@
 <template>
   <div class="hello">
+    <div v-if="loading">
+      <img
+        src="https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif"
+        class="spinner"
+      >
+      <p class="spinner-text monospace">
+        Crunching
+        <a :href="'https://github.com/' + username">@{{username}}</a>'s contributions just for you.
+      </p>
+    </div>
+    <div v-if="!loading">
+      <div class="calendar"></div>
+    </div>
     <h1>{{ username }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,
-      <br>check out the
-      <a
-        href="https://cli.vuejs.org"
-        target="_blank"
-        rel="noopener"
-      >vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
-          target="_blank"
-          rel="noopener"
-        >babel</a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-          target="_blank"
-          rel="noopener"
-        >eslint</a>
-      </li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a>
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a>
-      </li>
-      <li>
-        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
-      </li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li>
-        <a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a>
-      </li>
-      <li>
-        <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-devtools#vue-devtools"
-          target="_blank"
-          rel="noopener"
-        >vue-devtools</a>
-      </li>
-      <li>
-        <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a>
-      </li>
-      <li>
-        <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a>
-      </li>
-    </ul>
   </div>
 </template>
 
 <script>
+import parse from "github-calendar-parser";
+import { async } from "q";
 export default {
   name: "GithubActivityCalendar",
   props: {
     username: String,
     text: String,
     proxy: String
+  },
+  data: function() {
+    return {
+      loading: true,
+      calendar: "",
+      svg: ""
+    };
+  },
+  mounted() {
+    this.createCalendar();
+  },
+  methods: {
+    createCalendar: function() {
+      this.fetchCalendar();
+    },
+    fetchCalendar: function() {
+      const proxy =
+        this.proxy ||
+        function(url) {
+          return "https://urlreq.appspot.com/req?method=GET&url=" + url;
+        };
+      // We need a proxy for CORS
+      // Thanks, @izuzak (https://github.com/izuzak/urlreq)
+      fetch(proxy(`https://github.com/${this.username}`))
+        .then(res => res.text())
+        .then(body => {
+          this.setupCalendar(body);
+          // If 'include-fragment' with spinner img loads instead of the svg, fetchCalendar again
+          if (this.calendar.querySelector("includes-fragment")) {
+            setTimeout(this.fetchCalendar, 500);
+          } else {
+            this.renderCalendar();
+          }
+        });
+    },
+    renderCalendar: async function() {
+      await this.setupSvg();
+      await this.parseSvg();
+      await this.buildCalendar();
+    },
+    setupCalendar: function(body) {
+      let div = document.createElement("div");
+      div.innerHTML = body;
+      let cal = div.querySelector(".js-yearly-contributions");
+      cal.querySelector(".float-left.text-gray").innerHTML = this.text;
+      this.calendar = cal;
+    },
+    setupSvg: function() {
+      let svg = this.calendar.querySelector("svg.js-calendar-graph-svg");
+      let width = svg.getAttribute("width");
+      let height = svg.getAttribute("height");
+      // Remove height property entirely
+      svg.removeAttribute("height");
+      // Width property should be set to 100% to fill entire container
+      svg.setAttribute("width", "100%");
+      // Add a viewBox property based on the former width/height
+      svg.setAttribute("viewBox", "0 0 " + width + " " + height);
+      this.svg = svg;
+    },
+    parseSvg: function() {},
+    buildCalendar: function() {}
   }
 };
 </script>
