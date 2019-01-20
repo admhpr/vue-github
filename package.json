@@ -1,12 +1,32 @@
 {
-  "name": "vue-github-activity",
+  "name": "vue-github-activity-calendar",
   "version": "0.1.0",
-  "private": true,
+  "description": "vue your github activity and calendar",
+  "author": {
+    "name": "Adam Harpur",
+    "email": "adam@harpur.io",
+    "url": "https://adam.harpur.io"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:npm": "vue-cli-service build --target lib --name vueGithubActivityCalendar ./src/GithubActivityCalendar.vue"
   },
+  "repository": "github.com:harps116/vue-github-activity-calendar.git",
+  "bugs": "https://github.com/harps116/vue-github-activity-calendar/issues",
+  "keywords": [
+    "vue",
+    "github",
+    "calendar"
+  ],
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "private": false,
+  "main": "dist/vueGithubActivityCalendar.umd.js",
+  "unpkg": "dist/vueGithubActivityCalendar.umd.min.js",
   "dependencies": {
     "vue": "^2.5.21"
   },
