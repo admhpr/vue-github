@@ -13,9 +13,9 @@
     <div v-if="!loading">
       <div class="calendar">
         <div v-html="this.rawCalendar.innerHTML"></div>
+        <div v-if="this.stats">stats</div>
       </div>
     </div>
-    <h1>{{ username }}</h1>
   </div>
 </template>
 
@@ -98,6 +98,7 @@ export default {
       this.buildCalendar(parsed);
     },
     buildCalendar: function(data) {
+      this.contribData = data;
       this.loading = false;
     }
   }
@@ -129,7 +130,6 @@ a {
   text-align: center;
   margin: 0 auto;
   width: 50%;
-  padding: 5%;
 }
 
 .calendar-graph text.wday,
