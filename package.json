@@ -28,7 +28,6 @@
   "main": "dist/vueGithubActivityCalendar.umd.js",
   "unpkg": "dist/vueGithubActivityCalendar.umd.min.js",
   "dependencies": {
-    "github-calendar-parser": "^1.1.10",
     "vue": "^2.5.21"
   },
   "devDependencies": {
@@ -38,7 +37,8 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "github-calendar-parser": "^1.1.10"
   },
   "eslintConfig": {
     "root": true,
