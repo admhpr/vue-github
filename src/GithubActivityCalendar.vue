@@ -27,7 +27,7 @@ export default {
     username: { String, required: true },
     text: String,
     proxy: Function,
-    stats: Boolean
+    stats: { Boolean, default: true }
   },
   data: function() {
     return {
