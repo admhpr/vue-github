@@ -22,7 +22,7 @@
 
 <script>
 import parse from "github-calendar-parser";
-import GithubFeed from "GithubFeed";
+import GithubFeed from "./GithubFeed";
 
 export default {
   name: "GithubActivityCalendar",

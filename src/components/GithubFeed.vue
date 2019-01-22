@@ -38,27 +38,24 @@ export default {
     loading: false,
     error: false
   }),
-  created() {
-    service
-      .user(this.username)
-      .then(response => {
-        this.user = response.data;
-        service
-          .events(this.username)
-          .then(events => {
-            this.loading = false;
-            this.error = false;
-            this.events = events.data;
-          })
-          .catch(e => {
-            this.loading = false;
-            console.error(e);
-          });
-      })
-      .catch(e => {
-        this.loading = false;
-        console.error(e);
+  async created() {
+    try {
+      await service.user(this.username).then(async response => {
+        this.user = await response.json();
       });
+    } catch (e) {
+      this.loading = false;
+      throw e;
+    }
+    try {
+      await service.events(this.username).then(async events => {
+        this.loading = false;
+        this.events = await events.json();
+      });
+    } catch (e) {
+      this.loading = false;
+      throw e;
+    }
   }
 };
 </script>
