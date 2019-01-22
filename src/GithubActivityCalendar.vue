@@ -13,7 +13,8 @@
     <div v-if="!loading">
       <div class="calendar">
         <div v-html="this.rawCalendar.innerHTML"></div>
-        <div v-if="this.stats">stats</div>
+
+        <github-feed login="harps116"></github-feed>
       </div>
     </div>
   </div>
@@ -21,6 +22,7 @@
 
 <script>
 import parse from "github-calendar-parser";
+
 export default {
   name: "GithubActivityCalendar",
   props: {
