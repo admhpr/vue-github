@@ -14,7 +14,7 @@
       <div class="calendar">
         <div v-html="this.rawCalendar.innerHTML"></div>
 
-        <github-feed login="harps116"></github-feed>
+        <github-feed username="harps116"></github-feed>
       </div>
     </div>
   </div>
@@ -22,6 +22,7 @@
 
 <script>
 import parse from "github-calendar-parser";
+import GithubFeed from "GithubFeed";
 
 export default {
   name: "GithubActivityCalendar",
@@ -30,6 +31,9 @@ export default {
     text: String,
     proxy: Function,
     stats: { Boolean, default: true }
+  },
+  components: {
+    GithubFeed
   },
   data: function() {
     return {
@@ -58,7 +62,6 @@ export default {
         .then(res => res.text())
         .then(body => {
           this.setupCalendar(body);
-          // If 'include-fragment' with spinner img loads instead of the svg, fetchCalendar again
           if (this.rawCalendar.querySelector("includes-fragment")) {
             setTimeout(this.fetchCalendar, 500);
           } else {
@@ -87,11 +90,9 @@ export default {
       let svg = this.rawCalendar.querySelector("svg.js-calendar-graph-svg");
       let width = svg.getAttribute("width");
       let height = svg.getAttribute("height");
-      // Remove height property entirely
+      // Dimension adjustment
       svg.removeAttribute("height");
-      // Width property should be set to 100% to fill entire container
       svg.setAttribute("width", "100%");
-      // Add a viewBox property based on the former width/height
       svg.setAttribute("viewBox", "0 0 " + width + " " + height);
       this.rawSvg = svg;
     },

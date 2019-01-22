@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import GithubActivityCalendar from "./GithubActivityCalendar.vue";
+import GithubActivityCalendar from "./components/GithubActivityCalendar.vue";
 
 export default {
   name: "app",

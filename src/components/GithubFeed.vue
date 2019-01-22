@@ -21,14 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-wrapper">
-      <p style="display: inline">Public Activity</p>
-      <a
-        style="float: right; color: #232323"
-        target="_blank"
-        href="https://github.com/lexmartinez/vue-github-activity"
-      >GitHub Activity Feed</a>
-    </div>
+    <div class="footer-wrapper"></div>
   </div>
 </template>
 
