@@ -87,42 +87,29 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .feed {
-  position: relative;
-  display: table;
-  height: 500px;
-  min-height: 200px;
-  width: 100%;
-  min-width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,
-    sans-serif;
-  font-size: 1rem;
-  color: #373a3c;
+
 }
 .header-wrapper {
-  display: table-row;
-  height: 1px;
+
 }
 .header {
-  display: table-cell;
-  top: 1px;
-  left: 1px;
+  display: flex;
+  align-items: baseline;
   padding: 10px;
   border-bottom: 1px solid #ddd;
+  img {
+    max-height: 65px;
+  }
 }
 .avatar-wrapper {
-  display: inline;
-  float: right;
   margin-right: 10px;
   padding-right: 20px;
   max-width: 60px;
-  height: 67px;
 }
 .avatar {
   padding: 3px;
-  height: 100%;
   border: 1px solid #ddd;
   box-shadow: 1px 1px 3px #ccc;
 }
@@ -130,8 +117,6 @@ export default {
   font: normal normal 40px "octicons";
 }
 .github-icon {
-  display: inline;
-  float: left;
   padding: 9px 0 0;
   width: 35px;
   height: 35px;
@@ -144,8 +129,6 @@ export default {
   color: #666;
 }
 .github-profile {
-  display: inline-block;
-  float: left;
   margin: 0 auto;
   padding: 6px 10px 5px;
   color: #495961;
@@ -165,19 +148,10 @@ export default {
   font-family: Helvetica, arial, freesans, clean, sans-serif;
 }
 .events-wrapper {
-  height: 100%;
-  display: table-row;
 }
 .feed-list {
-  overflow-y: auto;
-  position: relative;
-  display: table-cell;
 }
 .event-list {
-  overflow-y: scroll;
-  max-height: 500px;
-  width: 100%;
-  min-height: 100px;
 }
 .github-event {
   border-top: 1px solid #f1f1f1;
@@ -189,7 +163,6 @@ export default {
   margin-right: 10px;
 }
 .event-time {
-  display: inline-block;
   font-size: 12px;
   margin-left: 3px;
   color: #bbb;
