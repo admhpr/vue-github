@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="">
     <div v-if="loading">
       <img
         src="https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif"

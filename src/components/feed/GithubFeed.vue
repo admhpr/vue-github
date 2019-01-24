@@ -17,7 +17,9 @@
     <div class="events-wrapper">
       <div class="feed-list">
         <div class="event-list">
-          <div></div>
+          <div :key="event.id" v-for="event in this.events">
+            <component :is="event.type"></component>
+          </div>
         </div>
       </div>
     </div>
@@ -27,10 +29,33 @@
 
 <script>
 import service from "../../services/GithubService";
+import CommitEvent from "./events/Commit"
+import CreateEvent from "./events/Create";
+import DeleteEvent from "./events/Delete";
+import ForkEvent from "./events/Fork";
+import IssueEvent from "./events/Issue";
+import PubliEvent from "./events/Public";
+import PushEvent from "./events/Push";
+import PullRequestEvent from "./events/PullRequest";
+import WatchEvent from "./events/Watch";
+
+
+
 export default {
   name: "github-feed",
   props: {
     username: { String, required: true }
+  },
+  components:{
+    CommitEvent,
+    CreateEvent,
+    DeleteEvent,
+    ForkEvent,
+    IssueEvent,
+    PubliEvent,
+    PushEvent,
+    PullRequestEvent,
+    WatchEvent
   },
   data: () => ({
     user: {},
