@@ -29,11 +29,11 @@
 
 <script>
 import service from "../../services/GithubService";
-import CommitEvent from "./events/Commit"
+import CommitCommentEvent from "./events/Commit"
 import CreateEvent from "./events/Create";
 import DeleteEvent from "./events/Delete";
 import ForkEvent from "./events/Fork";
-import IssueEvent from "./events/Issue";
+import IssueCommentEvent from "./events/Issue";
 import PubliEvent from "./events/Public";
 import PushEvent from "./events/Push";
 import PullRequestEvent from "./events/PullRequest";
@@ -47,11 +47,11 @@ export default {
     username: { String, required: true }
   },
   components:{
-    CommitEvent,
+    CommitCommentEvent,
     CreateEvent,
     DeleteEvent,
     ForkEvent,
-    IssueEvent,
+    IssueCommentEvent,
     PubliEvent,
     PushEvent,
     PullRequestEvent,
