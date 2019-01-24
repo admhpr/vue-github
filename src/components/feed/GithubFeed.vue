@@ -6,7 +6,7 @@
           <span class="github-octicon octicon octicon-mark-github"></span>
         </div>
         <a :href="user.html_url" target="_blank" class="github-profile">
-          <div style="font-size: 26px; line-height: 30px">{{user.name}}</div>
+          <div>{{user.name}}</div>
           <div class="github-username">{{user.username}}</div>
         </a>
         <div class="avatar-wrapper">
