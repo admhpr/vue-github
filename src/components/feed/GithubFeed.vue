@@ -155,8 +155,9 @@ export default {
 }
 .github-event {
   border-top: 1px solid #f1f1f1;
-  padding: 1em 0 0;
-  padding: 1.5em 0 1.5em 25px;
+  display: flex;
+  align-items: baseline;
+  padding: 1em;
 }
 .event-octicon {
   color: #bbb;
@@ -175,6 +176,7 @@ export default {
 }
 .event-text {
   font-size: 13px;
+  text-align: left;
 }
 .event-detail {
   color: #666666;
