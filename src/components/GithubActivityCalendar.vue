@@ -112,6 +112,7 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
+
 a {
   color: #42b983;
 }
@@ -127,10 +128,11 @@ a {
   padding: 1em;
 }
 
-.calendar-graph text.wday,
-.calendar-graph text.month {
-  font-size: 10px;
-  fill: #aaa;
+.calendar-graph text {
+  &.wday, &.month {
+    font-size: 10px;
+    fill: #aaa;
+  }
 }
 
 .text-small {
@@ -143,15 +145,11 @@ a {
   text-align: center;
 }
 
-
-
 .calendar img.spinner {
   width: 70px;
   margin-top: 50px;
   min-height: 70px;
 }
-
-
 
 .contrib-footer {
   padding: 1em;
