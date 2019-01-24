@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import service from "../services/GithubService";
+import service from "../../services/GithubService";
 export default {
   name: "github-feed",
   props: {
