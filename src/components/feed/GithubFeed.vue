@@ -18,7 +18,7 @@
       <div class="feed-list">
         <div class="event-list">
           <div :key="event.id" v-for="event in this.events">
-            <component :is="event.type"></component>
+            <component :event="event" :is="event.type"></component>
           </div>
         </div>
       </div>
