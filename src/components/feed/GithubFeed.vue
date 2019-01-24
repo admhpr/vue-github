@@ -29,6 +29,8 @@
 
 <script>
 import service from "../../services/GithubService";
+
+
 import CommitCommentEvent from "./events/Commit"
 import CreateEvent from "./events/Create";
 import DeleteEvent from "./events/Delete";
