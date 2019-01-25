@@ -85,6 +85,12 @@ export default {
 </script>
 
 <style lang="scss">
+$grey: #666666;
+$grey-blue: #495961;
+$white: #f1f1f1;
+$blue: #1798d8;
+
+$font-size: 13px;
 .feed {
 }
 .header-wrapper {
@@ -93,7 +99,7 @@ export default {
   display: flex;
   align-items: baseline;
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid lighten($grey, 40);
   img {
     max-height: 65px;
   }
@@ -105,8 +111,8 @@ export default {
 }
 .avatar {
   padding: 3px;
-  border: 1px solid #ddd;
-  box-shadow: 1px 1px 3px #ccc;
+  border: 1px solid lighten($grey, 40);
+  box-shadow: 1px 1px 3px lighten($grey, 40);
 }
 .github-octicon {
   font: normal normal 40px "octicons";
@@ -121,25 +127,25 @@ export default {
   font-style: normal;
   font-weight: 300;
   line-height: 24px;
-  color: #666;
+  color: $grey;
 }
 .github-profile {
   margin: 0 auto;
   padding: 6px 10px 5px;
-  color: #495961;
+  color: $grey-blue;
   font-size: 20px;
   text-decoration: none;
   margin-left: 10px;
 }
 .github-profile:hover {
-  color: #495961;
+  color: $grey-blue;
   text-decoration: none;
 }
 .footer-wrapper {
   padding: 5px;
   font-weight: bold;
-  font-size: 13px;
-  border-top: 1px solid #ddd;
+  font-size: $font-size;
+  border-top: 1px solid ligten($grey, 40);
   font-family: Helvetica, arial, freesans, clean, sans-serif;
 }
 .events-wrapper {
@@ -149,34 +155,34 @@ export default {
 .event-list {
 }
 .github-event {
-  border-top: 1px solid #f1f1f1;
+  border-top: 1px solid $white;
   display: flex;
   align-items: baseline;
   padding: 1em;
 }
 .event-octicon {
-  color: #bbb;
+  color: $grey;
   margin-right: 10px;
 }
 .event-time {
   font-size: 12px;
   margin-left: 3px;
-  color: #bbb;
+  color: $grey;
 }
 .event-link {
-  color: #1798d8;
+  color: $blue;
 }
 .event-link:hover {
-  color: #1798d8;
+  color: $blue;
 }
 .event-text {
-  font-size: 13px;
-  text-align: left;
+  font-size: $font-size;
   width: 50%;
+  flex: display;
 }
 .event-detail {
-  font-size: 13px;
-  color: #666666;
+  font-size: $font-size;
+  color: $grey;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .event-octicon {
