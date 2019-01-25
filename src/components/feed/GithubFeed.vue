@@ -30,8 +30,7 @@
 <script>
 import service from "../../services/GithubService";
 
-
-import CommitCommentEvent from "./events/Commit"
+import CommitCommentEvent from "./events/Commit";
 import CreateEvent from "./events/Create";
 import DeleteEvent from "./events/Delete";
 import ForkEvent from "./events/Fork";
@@ -41,14 +40,12 @@ import PushEvent from "./events/Push";
 import PullRequestEvent from "./events/PullRequest";
 import WatchEvent from "./events/Watch";
 
-
-
 export default {
   name: "github-feed",
   props: {
     username: { String, required: true }
   },
-  components:{
+  components: {
     CommitCommentEvent,
     CreateEvent,
     DeleteEvent,
@@ -89,10 +86,8 @@ export default {
 
 <style lang="scss">
 .feed {
-
 }
 .header-wrapper {
-
 }
 .header {
   display: flex;
@@ -177,8 +172,10 @@ export default {
 .event-text {
   font-size: 13px;
   text-align: left;
+  width: 50%;
 }
 .event-detail {
+  font-size: 13px;
   color: #666666;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
