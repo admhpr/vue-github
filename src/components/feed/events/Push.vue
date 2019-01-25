@@ -1,22 +1,22 @@
 <template>
   <div class="github-event">
-    <span class="event-octicon octicon octicon-repo-push dashboard-event-icon"></span>
     <div class="event-text" v-if="event">
-      <a>{{event.actor.login}}</a>
-      <b>
+      <div class="event-user">
+        <span class="event-octicon octicon octicon-repo-push dashboard-event-icon"></span>
+        <a>{{event.actor.login}}</a>
         pushed to
         <a
           class="event-link"
           :href="'https://github.com/' + event.repo.name + '/tree/' + branch(event.payload.ref)"
           target="_blank"
         >{{branch(event.payload.ref)}}</a>
-        at
-        <a
-          class="event-link"
-          :href="'https://github.com/' + event.repo.name"
-          target="_blank"
-        >{{event.repo.name}}</a>
-      </b>
+        on
+      </div>
+      <a
+        class="event-link"
+        :href="'https://github.com/' + event.repo.name"
+        target="_blank"
+      >{{event.repo.name}}</a>
     </div>
     <div class="event-time" v-if="event">{{this.daysAgo(event.created_at)}}</div>
     <ul>

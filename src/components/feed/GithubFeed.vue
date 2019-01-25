@@ -177,8 +177,7 @@ $font-size: 13px;
 }
 .event-text {
   font-size: $font-size;
-  width: 50%;
-  flex: display;
+  text-align: left;
 }
 .event-detail {
   font-size: $font-size;
