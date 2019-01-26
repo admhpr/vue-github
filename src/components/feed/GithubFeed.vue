@@ -172,9 +172,6 @@ $font-size: 13px;
 .event-link {
   color: $blue;
 }
-.event-link:hover {
-  color: $blue;
-}
 .event-text {
   font-size: $font-size;
   text-align: left;

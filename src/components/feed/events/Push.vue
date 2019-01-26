@@ -3,7 +3,7 @@
     <div class="event-text" v-if="event">
       <div class="event-user">
         <span class="event-octicon octicon octicon-repo-push dashboard-event-icon"></span>
-        <a>{{event.actor.login}}</a>
+        <a class="event-link">{{event.actor.login}}</a>
         pushed to
         <a
           class="event-link"
@@ -19,17 +19,19 @@
       >{{event.repo.name}}</a>
     </div>
     <div class="event-time" v-if="event">{{this.daysAgo(event.created_at)}}</div>
-    <ul>
-      <li v-for="commit in event.payload.commits" :key="commit.id" class="event-detail">
-        <span class="event-octicon octicon octicon-git-commit dashboard-event-icon"></span>
-        <a
-          :href="'https://github.com/' + event.repo.name + '/commit/' + commit.sha"
-          target="_blank"
-          class="event-link"
-        >{{hash(commit.sha)}}</a>
-        {{commit.message}}
-      </li>
-    </ul>
+    <div class="event-action">
+      <ul>
+        <li v-for="commit in event.payload.commits" :key="commit.id" class="event-detail">
+          <span class="event-octicon octicon octicon-git-commit dashboard-event-icon"></span>
+          <a
+            :href="'https://github.com/' + event.repo.name + '/commit/' + commit.sha"
+            target="_blank"
+            class="event-link"
+          >{{hash(commit.sha)}}</a>
+          {{commit.message}}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
