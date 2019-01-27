@@ -1,6 +1,6 @@
 <template>
-  <div class="github-event">
-    <div class="event-text" v-if="event">
+  <div class="row">
+    <div class="column" v-if="event">
       <div class="event-user">
         <span class="event-octicon octicon octicon-repo-push dashboard-event-icon"></span>
         <a class="event-link">{{event.actor.login}}</a>
@@ -18,8 +18,8 @@
         target="_blank"
       >{{event.repo.name}}</a>
     </div>
-    <div class="event-time" v-if="event">{{this.daysAgo(event.created_at)}}</div>
-    <div class="event-action">
+    <div class="column" v-if="event">{{this.daysAgo(event.created_at)}}</div>
+    <div class="column">
       <ul>
         <li v-for="commit in event.payload.commits" :key="commit.id" class="event-detail">
           <span class="event-octicon octicon octicon-git-commit dashboard-event-icon"></span>

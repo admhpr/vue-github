@@ -87,10 +87,7 @@ $white: #f1f1f1;
 $blue: #1798d8;
 
 $font-size: 13px;
-.feed {
-}
-.header-wrapper {
-}
+
 .header {
   display: flex;
   align-items: baseline;
@@ -144,48 +141,37 @@ $font-size: 13px;
   border-top: 1px solid ligten($grey, 40);
   font-family: Helvetica, arial, freesans, clean, sans-serif;
 }
-.events-wrapper {
-}
-.feed-list {
-}
-.event-list {
-}
-.event-action {
-  ul {
-    padding: 0;
-  }
-}
-.github-event {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: baseline;
-  border-top: 1px solid $white;
-  padding: 1em;
-}
+
 .event-octicon {
   color: $grey;
   margin-right: 10px;
 }
-.event-time {
-  font-size: 12px;
-  color: $grey;
-}
 .event-link {
   color: $blue;
 }
-.event-text {
-  font-size: $font-size;
-  text-align: left;
-}
-.event-detail {
-  text-align: left;
-  font-size: $font-size;
-  color: $grey;
-  .event-action {
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 5px 0;
+  > * {
+    font-size: $font-size;
   }
 }
 
+.column {
+  flex: 1;
+  border: 1px solid gray;
+  margin: 2px;
+  padding: 10px;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .event-octicon {
     display: none !important;
