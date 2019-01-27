@@ -15,12 +15,8 @@
       </div>
     </div>
     <div class="events-wrapper">
-      <div class="feed-list">
-        <div class="event-list">
-          <div :key="event.id" v-for="event in this.events">
-            <component :event="event" :is="event.type"></component>
-          </div>
-        </div>
+      <div :key="event.id" v-for="event in this.events" class="feed-list">
+        <component :event="event" :is="event.type"></component>
       </div>
     </div>
     <div class="footer-wrapper"></div>
@@ -154,10 +150,17 @@ $font-size: 13px;
 }
 .event-list {
 }
+.event-action {
+  ul {
+    padding: 0;
+  }
+}
 .github-event {
-  border-top: 1px solid $white;
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
   align-items: baseline;
+  border-top: 1px solid $white;
   padding: 1em;
 }
 .event-octicon {
@@ -166,7 +169,6 @@ $font-size: 13px;
 }
 .event-time {
   font-size: 12px;
-  margin-left: 3px;
   color: $grey;
 }
 .event-link {
@@ -177,9 +179,13 @@ $font-size: 13px;
   text-align: left;
 }
 .event-detail {
+  text-align: left;
   font-size: $font-size;
   color: $grey;
+  .event-action {
+  }
 }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .event-octicon {
     display: none !important;
