@@ -1,15 +1,31 @@
 <template>
-    <div>
-         Watch
+  <div class="row">
+    <span class="event-octicon octicon octicon-star dashboard-event-icon"></span>
+    <div style="display: inline-block;" class="column" v-if="event">
+      <a class="event-link">{{event.actor.login}}</a>
+      <b>
+        starred
+        <a
+          class="event-link"
+          :href="'https://github.com/' + event.repo.name"
+          target="_blank"
+        >{{event.repo.name}}</a>
+      </b>
     </div>
+    <div class="column" v-if="event">{{fromNow(event.created_at)}}</div>
+    <div class="column"></div>
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import { fromNow } from "../../utils/format";
+export default {
+  name: "watch-event",
+  props: {
+    event: { required: true }
+  },
+  methods: {
+    fromNow
+  }
+};
 </script>
-
-<style scoped>
-
-</style>
