@@ -154,6 +154,7 @@ $font-size: 13px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  align-items: baseline;
   margin: 5px 0;
   > * {
     font-size: $font-size;
@@ -162,7 +163,6 @@ $font-size: 13px;
 
 .column {
   flex: 1;
-  border: 1px solid gray;
   margin: 2px;
   padding: 10px;
   &:first-child {
@@ -170,6 +170,7 @@ $font-size: 13px;
   }
   &:last-child {
     margin-right: 0;
+    text-align: left;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
