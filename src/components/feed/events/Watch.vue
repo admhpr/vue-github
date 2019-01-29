@@ -1,7 +1,7 @@
 <template>
   <div class="row">
-    <span class="event-octicon octicon octicon-star dashboard-event-icon"></span>
     <div style="display: inline-block;" class="column" v-if="event">
+      <span class="event-octicon octicon octicon-star dashboard-event-icon"></span>
       <a class="event-link">{{event.actor.login}}</a>
       <b>
         starred

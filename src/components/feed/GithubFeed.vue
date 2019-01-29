@@ -167,6 +167,7 @@ $font-size: 13px;
   padding: 10px;
   &:first-child {
     margin-left: 0;
+    text-align: left;
   }
   &:last-child {
     margin-right: 0;
