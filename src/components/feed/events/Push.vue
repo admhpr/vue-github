@@ -36,21 +36,16 @@
 </template>
 
 <script>
-import { fromNow, hash, branch } from "../../utils/format";
+import { daysAgo, hash, branch } from "../../utils/format";
 export default {
   name: "push-event",
   props: {
     event: { required: true }
   },
   methods: {
-    fromNow,
+    daysAgo,
     hash,
-    branch,
-    daysAgo: function(createdAt) {
-      const diff = fromNow(createdAt);
-      const isPlural = diff > 1 ? "s" : "";
-      return `${diff} day${isPlural} ago`;
-    }
+    branch
   }
 };
 </script>

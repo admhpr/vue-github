@@ -12,20 +12,20 @@
         >{{event.repo.name}}</a>
       </b>
     </div>
-    <div class="column" v-if="event">{{fromNow(event.created_at)}}</div>
+    <div class="column" v-if="event">{{daysAgo(event.created_at)}}</div>
     <div class="column"></div>
   </div>
 </template>
 
 <script>
-import { fromNow } from "../../utils/format";
+import { daysAgo } from "../../utils/format";
 export default {
   name: "watch-event",
   props: {
     event: { required: true }
   },
   methods: {
-    fromNow
+    daysAgo
   }
 };
 </script>

@@ -1,4 +1,4 @@
-const fromNow = (isoDate = "2019-01-22T19:31:35Z") => {
+const fromNow = (isoDate) => {
     const createdAt = new Date(isoDate)
     const now = new Date()
     const timeDiff = Math.abs(createdAt.getTime() - now.getTime());
@@ -14,8 +14,14 @@ const branch = (ref) => {
     return ref.replace('refs/heads/', '')
 }
 
+const daysAgo = (isoDate) => {
+    const diff = fromNow(isoDate);
+    const isPlural = diff > 1 ? "s" : "";
+    return `${diff} day${isPlural} ago`;
+}
+
 export {
-    fromNow,
+    daysAgo,
     hash,
     branch,
 }
