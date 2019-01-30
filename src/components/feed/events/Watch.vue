@@ -1,6 +1,6 @@
 <template>
-  <div class="row">
-    <div style="display: inline-block;" class="column" v-if="event">
+  <div class="row" v-if="event">
+    <div style="display: inline-block;" class="column">
       <span class="event-octicon octicon octicon-star dashboard-event-icon"></span>
       <a class="event-link">{{event.actor.login}}</a>
       <b>
@@ -12,8 +12,19 @@
         >{{event.repo.name}}</a>
       </b>
     </div>
-    <div class="column" v-if="event">{{daysAgo(event.created_at)}}</div>
-    <div class="column"></div>
+    <div class="column">{{daysAgo(event.created_at)}}</div>
+    <div class="column">
+      <ul>
+        <li>
+          <span class="event-octicon octicon octicon-organization dashboard-event-icon"></span>
+          <a
+            :href="'https://github.com/' + event.org.login"
+            target="_blank"
+            class="event-link"
+          >{{event.org.login}}</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
