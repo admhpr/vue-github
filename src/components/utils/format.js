@@ -3,7 +3,7 @@ const fromNow = (isoDate) => {
     const now = new Date()
     const timeDiff = Math.abs(createdAt.getTime() - now.getTime());
     const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); // milliseconds in day
-    return diffDays
+    return diffDays - 1;
 }
 
 const hash = (sha) => {
@@ -17,7 +17,7 @@ const branch = (ref) => {
 const daysAgo = (isoDate) => {
     const diff = fromNow(isoDate);
     const isPlural = diff > 1 ? "s" : "";
-    return `${diff} day${isPlural} ago`;
+    return diff === 0 ? `today` : `${diff} day${isPlural} ago`;
 }
 
 export {
