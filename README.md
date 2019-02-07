@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/npm/l/vue-github.svg?style=flat)](https://github.com/harps116/vue-github/blob/master/LICENSE.md)
+
 ## Installation
 
 `npm install --save vue-github`
@@ -24,7 +26,7 @@ import VueGithub from "vue-github";
 Vue.use(VueGithub);
 ```
 
-On your template you can now use html like this to render the activity feed:
+In your template you can now use html like this to render the activity feed:
 
 ```html
 <vue-github username="harps116" />
