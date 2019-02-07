@@ -1,6 +1,6 @@
 <template>
   <div class="row" v-if="event">
-    <div style="display: inline-block;" class="column">
+    <div class="column">
       <span class="event-octicon octicon octicon-star dashboard-event-icon"></span>
       <a class="event-link">{{event.actor.login}}</a>
       <b>
@@ -31,7 +31,6 @@
 <script>
 import { daysAgo } from "../../utils/format";
 export default {
-  name: "watch-event",
   props: {
     event: { required: true }
   },

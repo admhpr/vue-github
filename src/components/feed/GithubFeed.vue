@@ -26,7 +26,7 @@
 <script>
 import service from "../../services/GithubService";
 
-import CommitCommentEvent from "./events/Commit";
+import CommitCommentEvent from "./events/CommitComment";
 import CreateEvent from "./events/Create";
 import DeleteEvent from "./events/Delete";
 import ForkEvent from "./events/Fork";

@@ -1,6 +1,6 @@
 <template>
   <div class="row" v-if="event">
-    <div style="display: inline-block;" class="column">
+    <div class="column">
       <span class="event-octicon octicon dashboard-event-icon octicon-comment"></span>
       <a>{{event.actor.login}}</a>
       commented on {{event.payload.issue.pull_request?'pull request':'issue'}}
@@ -31,7 +31,6 @@
 <script>
 import { daysAgo } from "../../utils/format";
 export default {
-  name: "watch-event",
   props: {
     event: { required: true }
   },

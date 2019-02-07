@@ -1,16 +1,13 @@
 <template>
   <div class="row" v-if="event">
     <div class="column">
-      <span
-        class="event-octicon octicon dashboard-event-icon"
-        :class="event.payload.action === 'opened'?'octicon-issue-opened':'octicon-issue-closed'"
-      ></span>
-      {{event.payload.action}} issue
+      <a>{{event.actor.login}}</a>
+      commented on commit
       <a
         class="event-link"
-        :href="event.payload.issue.html_url"
+        :href="'https://github.com/' + event.repo.name + '/commit/' + event.payload.comment.commit_id"
         target="_blank"
-      >#{{event.payload.issue.number}}</a>
+      >{{hash(event.payload.comment.commit_id)}}</a>
       at
       <a
         class="event-link"
@@ -23,7 +20,11 @@
       <ul>
         <li>
           <span class="event-octicon octicon octicon-chevron-right dashboard-event-icon"></span>
-          {{event.payload.issue.title}}
+          <a
+            class="event-link"
+            :href="event.payload.comment.html_url"
+            target="_blank"
+          >Link to comment</a>
         </li>
       </ul>
     </div>
@@ -41,3 +42,6 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+</style>
