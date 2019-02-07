@@ -11,10 +11,10 @@
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build:npm": "vue-cli-service build --target lib --name vueGithubActivityCalendar ./src/GithubActivityCalendar.vue"
+    "build:npm": "vue-cli-service build --target lib --name vueGithubActivityCalendar ./src/components/GithubActivityCalendar.vue"
   },
-  "repository": "github.com:harps116/vue-github-activity-calendar.git",
-  "bugs": "https://github.com/harps116/vue-github-activity-calendar/issues",
+  "repository": "github.com:harps116/vue-github.git",
+  "bugs": "https://github.com/harps116/vue-github/issues",
   "keywords": [
     "vue",
     "github",
