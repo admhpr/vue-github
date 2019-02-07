@@ -1,18 +1,12 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <github-activity-calendar username="harps116"/>
+    <vue-github username="harps116"/>
   </div>
 </template>
-
 <script>
-import GithubActivityCalendar from "./components/GithubActivityCalendar.vue";
 
 export default {
   name: "app",
-  components: {
-    GithubActivityCalendar
-  }
 };
 </script>
 

@@ -27,15 +27,7 @@
 import service from "../../services/GithubService";
 
 import CommitCommentEvent from "./events/CommitComment";
-import CreateEvent from "./events/Create";
-import DeleteEvent from "./events/Delete";
-import ForkEvent from "./events/Fork";
-import IssuesEvent from "./events/Issues";
-import IssuesCommentEvent from "./events/IssuesComment";
-import PubliEvent from "./events/Public";
-import PushEvent from "./events/Push";
-import PullRequestEvent from "./events/PullRequest";
-import WatchEvent from "./events/Watch";
+
 
 export default {
   name: "github-feed",

@@ -23,13 +23,13 @@
 </template>
 
 <script>
-import { daysAgo } from "../../utils/format";
+import EventContainer from "../containers/EventContainer";
 export default {
   props: {
-    event: { required: true }
+    event: { required: true },
   },
-  methods: {
-    daysAgo
+  components: {
+    EventContainer
   }
 };
 </script>

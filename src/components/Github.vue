@@ -24,7 +24,6 @@
 import parse from "github-calendar-parser";
 import GithubFeed from "./feed/GithubFeed.vue";
 export default {
-  name: "GithubActivityCalendar",
   props: {
     username: { String, required: true },
     text: String,
