@@ -6,7 +6,7 @@
     "private": true,
     "scripts": {
         "dev": "webpack-dev-server --inline --hot",
-        "build": "webpack --progress --hide-modules --display-error-details"
+        "build": "webpack --progress --hide-modules"
     },
     "dependencies": {
         "vue": "^2.5.21"
