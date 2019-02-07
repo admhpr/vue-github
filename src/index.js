@@ -6,22 +6,11 @@ export {
     Github,
 }
 
-function registerComponents(Vue, prefix) {
-    Vue.component(`${prefix}github`, Github)
-}
-
 const plugin = {
     // eslint-disable-next-line no-undef
-    install(Vue, options) {
-        globalOptions = Object.assign({}, {
-            installComponents: true,
-            componentsPrefix: "vue-"
-        }, options)
-
-        if (globalOptions.installComponents) {
-            registerComponents(Vue, globalOptions.componentsPrefix)
-        }
-    },
+    install(Vue) {
+        Vue.component(`vue-github`, Github)
+    }
 }
 
 export default plugin

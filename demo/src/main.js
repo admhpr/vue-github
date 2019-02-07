@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueGithub from 'vue-github'
+import VueGithub from '../../src'
 
 Vue.use(VueGithub);
 
