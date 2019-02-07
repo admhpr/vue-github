@@ -17,10 +17,7 @@
         target="_blank"
       >{{event.repo.name}}</a>
     </div>
-    <li slot="list-info">
-      <span class="event-octicon octicon octicon-chevron-right dashboard-event-icon"></span>
-      {{event.payload.issue.title}}
-    </li>
+    <li slot="list-info"></li>
   </event-container>
 </template>
 

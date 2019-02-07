@@ -18,7 +18,6 @@
         target="_blank"
       >{{event.repo.name}}</a>
     </div>
-
     <li
       slot="list-info"
       v-for="commit in event.payload.commits"

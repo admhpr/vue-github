@@ -1,6 +1,6 @@
 <template>
-  <div class="row" v-if="event">
-    <div class="column">
+  <event-container :event="event">
+    <div slot="activity">
       <a>{{event.actor.login}}</a>
       commented on commit
       <a
@@ -15,20 +15,11 @@
         target="_blank"
       >{{event.repo.name}}</a>
     </div>
-    <div class="column">{{daysAgo(event.created_at)}}</div>
-    <div class="column">
-      <ul>
-        <li>
-          <span class="event-octicon octicon octicon-chevron-right dashboard-event-icon"></span>
-          <a
-            class="event-link"
-            :href="event.payload.comment.html_url"
-            target="_blank"
-          >Link to comment</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+    <li slot="list-info">
+      <span class="event-octicon octicon octicon-chevron-right dashboard-event-icon"></span>
+      <a class="event-link" :href="event.payload.comment.html_url" target="_blank">Link to comment</a>
+    </li>
+  </event-container>
 </template>
 
 <script>
