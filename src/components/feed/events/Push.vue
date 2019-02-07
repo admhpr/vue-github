@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import EventContainer from "../containers/EventContainer";
+import EventContainer from "../containers/EventContainer.vue";
 import { hash, branch } from "../../utils/format";
 export default {
   props: {

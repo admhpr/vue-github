@@ -5,11 +5,11 @@
     "author": "Adam Harpur <adam@harpur.io>",
     "private": true,
     "scripts": {
-        "build": "webpack --progress --hide-modules"
+        "dev": "webpack-dev-server --inline --hot",
+        "build": "webpack --progress --hide-modules --display-error-details"
     },
     "dependencies": {
-        "vue": "^2.5.21",
-        "vue-github": "^0.7.1"
+        "vue": "^2.5.21"
     },
     "devDependencies": {
         "babel-core": "^6.0.0",

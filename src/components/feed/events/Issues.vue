@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import EventContainer from "../containers/EventContainer";
+import EventContainer from "../containers/EventContainer.vue";
 export default {
   props: {
     event: { required: true }
