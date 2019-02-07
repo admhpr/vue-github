@@ -19,7 +19,7 @@
     "vue",
     "github",
     "calendar",
-    "vue-github",
+    "vue-github"
   ],
   "files": [
     "dist"
