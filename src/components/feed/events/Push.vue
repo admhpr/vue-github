@@ -1,6 +1,6 @@
 <template>
-  <div class="row" v-if="event">
-    <div class="column">
+  <event-container :event="event">
+    <div slot="activity">
       <div class="event-user">
         <span class="event-octicon octicon octicon-repo-push dashboard-event-icon"></span>
         <a class="event-link">{{event.actor.login}}</a>
@@ -18,29 +18,33 @@
         target="_blank"
       >{{event.repo.name}}</a>
     </div>
-    <div class="column">{{this.daysAgo(event.created_at)}}</div>
-    <div class="column">
-      <ul>
-        <li v-for="commit in event.payload.commits" :key="commit.id" class="event-detail">
-          <span class="event-octicon octicon octicon-git-commit dashboard-event-icon"></span>
-          <a
-            :href="'https://github.com/' + event.repo.name + '/commit/' + commit.sha"
-            target="_blank"
-            class="event-link"
-          >{{hash(commit.sha)}}</a>
-          {{commit.message}}
-        </li>
-      </ul>
-    </div>
-  </div>
+
+    <li
+      slot="list-info"
+      v-for="commit in event.payload.commits"
+      :key="commit.id"
+      class="event-detail"
+    >
+      <span class="event-octicon octicon octicon-git-commit dashboard-event-icon"></span>
+      <a
+        :href="'https://github.com/' + event.repo.name + '/commit/' + commit.sha"
+        target="_blank"
+        class="event-link"
+      >{{hash(commit.sha)}}</a>
+      {{commit.message}}
+    </li>
+  </event-container>
 </template>
 
 <script>
+import EventContainer from "../containers/EventContainer";
 import { daysAgo, hash, branch } from "../../utils/format";
 export default {
-  name: "push-event",
   props: {
     event: { required: true }
+  },
+  components: {
+    EventContainer
   },
   methods: {
     daysAgo,
