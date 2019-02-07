@@ -8,7 +8,8 @@
         "build": "webpack --progress --hide-modules"
     },
     "dependencies": {
-        "vue": "^2.5.21"
+        "vue": "^2.5.21",
+        "vue-github": "^0.7.0"
     },
     "devDependencies": {
         "babel-core": "^6.0.0",
