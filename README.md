@@ -1,35 +1,35 @@
-# vue-github
+## Installation
 
-## Project setup
+`npm install --save vue-github`
 
-```
-npm install
-```
+## Dependencies
 
-### Compiles and hot-reloads for development
+Insert an octicons.css file in your html file to load the icons.
 
-```
-npm run dev
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
+```html
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css"
+/>
 ```
 
-### Run your tests
+## Usage
 
+The most common use case is to register all the components globally.
+
+```javascript
+import Vue from "vue";
+import VueGithub from "vue-github";
+
+Vue.use(VueGithub);
 ```
-npm run test
+
+On your template you can now use html like this to render the activity feed:
+
+```html
+<vue-github username="harps116" />
 ```
 
-### Lints and fixes files
+## License
 
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This project is licensed under MIT License - see the [LICENSE](./LICENSE.md) file for details
