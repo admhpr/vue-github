@@ -1,5 +1,5 @@
 <template>
-  <event-container>
+  <event-container :event="event">
     <div slot="activity">
       <span
         class="event-octicon octicon dashboard-event-icon"
@@ -27,16 +27,12 @@
 
 <script>
 import EventContainer from "../containers/EventContainer";
-import { daysAgo } from "../../utils/format";
 export default {
   props: {
     event: { required: true }
   },
   components: {
     EventContainer
-  },
-  methods: {
-    daysAgo
   }
 };
 </script>

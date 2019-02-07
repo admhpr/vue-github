@@ -1,15 +1,18 @@
 <template>
-    <div>
-         Fork
-    </div>
+  <event-container :event="event"></event-container>
 </template>
 
 <script>
-    export default {
-        
-    }
+import EventContainer from "../containers/EventContainer";
+export default {
+  props: {
+    event: { required: true }
+  },
+  components: {
+    EventContainer
+  }
+};
 </script>
 
 <style scoped>
-
 </style>

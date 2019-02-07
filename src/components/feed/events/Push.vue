@@ -38,7 +38,7 @@
 
 <script>
 import EventContainer from "../containers/EventContainer";
-import { daysAgo, hash, branch } from "../../utils/format";
+import { hash, branch } from "../../utils/format";
 export default {
   props: {
     event: { required: true }
@@ -47,7 +47,6 @@ export default {
     EventContainer
   },
   methods: {
-    daysAgo,
     hash,
     branch
   }

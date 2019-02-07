@@ -1,41 +1,36 @@
 <template>
-  <div class="row" v-if="event">
-    <div class="column">
+  <event-container :event="event">
+    <div slot="activity">
       <span class="event-octicon octicon octicon-star dashboard-event-icon"></span>
       <a class="event-link">{{event.actor.login}}</a>
-      <b>
-        starred
-        <a
-          class="event-link"
-          :href="'https://github.com/' + event.repo.name"
-          target="_blank"
-        >{{event.repo.name}}</a>
-      </b>
+      starred
+      <a
+        class="event-link"
+        :href="'https://github.com/' + event.repo.name"
+        target="_blank"
+      >{{event.repo.name}}</a>
     </div>
-    <div class="column">{{daysAgo(event.created_at)}}</div>
-    <div class="column">
-      <ul>
-        <li>
-          <span class="event-octicon octicon octicon-organization dashboard-event-icon"></span>
-          <a
-            :href="'https://github.com/' + event.org.login"
-            target="_blank"
-            class="event-link"
-          >{{event.org.login}}</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+    <li slot="list-info">
+      <span class="event-octicon octicon octicon-organization dashboard-event-icon"></span>
+      <a
+        v-if="event.org"
+        :href="'https://github.com/' + event.org.login"
+        target="_blank"
+        class="event-link"
+      >{{event.org.login}}</a>
+      <span v-else>Independant</span>
+    </li>
+  </event-container>
 </template>
 
 <script>
-import { daysAgo } from "../../utils/format";
+import EventContainer from "../containers/EventContainer";
 export default {
   props: {
     event: { required: true }
   },
-  methods: {
-    daysAgo
+  components: {
+    EventContainer
   }
 };
 </script>
