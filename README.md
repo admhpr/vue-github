@@ -2,11 +2,11 @@
 
 ## Installation
 
-### NPM
+#### NPM
 
 `npm i vue-github`
 
-### Yarn
+#### Yarn
 
 `yarn add vue-github`
 
@@ -34,6 +34,14 @@ Vue.use(VueGithub);
 
 Check out the `main.js` [demo](./demo/src/main.js) in this repo.
 
+import the style into your main `vue` file (most likely `App.vue`) if you want the default css.
+
+```html
+<style>
+  @import url("https://unpkg.com/vue-github@0.8.3/dist/vueGithub.css");
+</style>
+```
+
 In your template you can now use html like this to render the activity feed:
 
 ```html
@@ -49,3 +57,9 @@ Props:
 ## License
 
 This project is licensed under MIT License - see the [LICENSE](./LICENSE.md) file for details
+
+## Inspired by these great open source projects:
+
+[https://github.com/IonicaBizau/github-calendar](https://github.com/IonicaBizau/github-calendar)
+
+[https://github.com/lexmartinez/vue-github-activity](https://github.com/lexmartinez/vue-github-activity)
