@@ -108,17 +108,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+$green: #42b983;
+$grey: #dddddd;
+
 h3 {
   margin: 40px 0 0;
 }
 
 a {
-  color: #42b983;
+  color: $green;
 }
 
 .activity-calendar-wrapper {
   font-family: Helvetica, arial;
-  border: 1px solid #dddddd;
+  border: 1px solid $grey;
   border-radius: 3px;
   min-height: 243px;
   text-align: center;
@@ -127,17 +130,28 @@ a {
   padding: 1em;
 }
 
+.loading-wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  img {
+    max-width: 75px;
+    margin: auto;
+  }
+}
+
 .calendar-graph text {
   &.wday,
   &.month {
     font-size: 10px;
-    fill: #aaa;
+    fill: darken($grey, 10);
   }
 }
 
 .text-small {
   font-size: 12px;
-  color: #767676;
+  color: darken($grey, 30);
 }
 
 .calendar-graph {

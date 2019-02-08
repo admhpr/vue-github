@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <div class="topbar">
-      <input type="checkbox" id="checkbox" v-model="showFeed">
-      <label for="checkbox">Show Feed: {{ showFeed }}</label>
+      <div class="inputs">
+        <div class="input-group">
+          <input type="checkbox" id="checkbox" v-model="showFeed">
+          <label for="checkbox">Show Feed: {{ showFeed }}</label>
+        </div>
+      </div>
     </div>
     <div class="main">
       <div class="vue-github-wrapper">
@@ -36,6 +40,11 @@ export default {
 
 .vue-github-wrapper {
   width: 50%;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
 }
 
 #app {
