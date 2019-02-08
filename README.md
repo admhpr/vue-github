@@ -65,6 +65,10 @@ Props:
 | text     | String  | Summary of pull requests, issues opened, and commits made by {username} | Summary text                      |
 | showFeed | Boolean | true                                                                    | Whether to show the activity feed |
 
+## Issues
+
+Fill issues [here](https://github.com/harps116/vue-github/issues)
+
 ## License
 
 This project is licensed under MIT License - see the [LICENSE](./LICENSE.md) file for details
