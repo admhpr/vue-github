@@ -2,7 +2,13 @@
 
 ## Installation
 
-`npm install --save vue-github`
+### NPM
+
+`npm i vue-github`
+
+### Yarn
+
+`yarn add vue-github`
 
 ## Dependencies
 
@@ -17,7 +23,7 @@ Insert an octicons.css file in your html file to load the icons.
 
 ## Usage
 
-The most common use case is to register all the components globally.
+Register the component globally in your main javascript file.
 
 ```javascript
 import Vue from "vue";
@@ -26,11 +32,19 @@ import VueGithub from "vue-github";
 Vue.use(VueGithub);
 ```
 
+Check out the [demo](./demo/src/main.js) in this repo.
+
 In your template you can now use html like this to render the activity feed:
 
 ```html
 <vue-github username="harps116" />
 ```
+
+Props:
+
+| name     | type   | required |
+| -------- | ------ | -------- |
+| username | String | true     | // this is your github username |
 
 ## License
 
