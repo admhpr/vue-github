@@ -12,7 +12,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build:npm": "vue-cli-service build --target lib --name vueGithub ./src/index.js",
-    "release": "npm run build:npm && npm publish"
+    "release": "npm version patch && npm run build:npm && npm publish"
   },
   "repository": "github.com:harps116/vue-github.git",
   "bugs": "https://github.com/harps116/vue-github/issues",
@@ -27,8 +27,8 @@
   ],
   "license": "MIT",
   "private": false,
-  "main": "./dist/vueGithub.common.js",
-  "unpkg": "dist/vueGithubActivityCalendar.umd.min.js",
+  "main": "./dist/vueGithub.umd.js",
+  "unpkg": "dist/vueGithub.umd.min.js",
   "dependencies": {
     "vue": "^2.5.21"
   },
