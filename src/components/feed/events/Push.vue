@@ -37,7 +37,7 @@
 
 <script>
 import EventContainer from "../containers/EventContainer.vue";
-import { hash, branch } from "../../utils/format";
+import { hash, branch } from "../../utils/utils";
 export default {
   props: {
     event: { required: true }

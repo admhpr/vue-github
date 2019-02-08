@@ -6,11 +6,15 @@
           <input type="checkbox" id="checkbox" v-model="showFeed">
           <label for="checkbox">Show Feed: {{ showFeed }}</label>
         </div>
+        <div class="input-group">
+          <p>Text is set to: {{ text }}</p>
+          <input v-model="text" placeholder="edit me">
+        </div>
       </div>
     </div>
     <div class="main">
       <div class="vue-github-wrapper">
-        <vue-github :showFeed="showFeed" username="harps116"/>
+        <vue-github :text="text" :showFeed="showFeed" username="harps116"/>
       </div>
     </div>
   </div>
@@ -20,7 +24,8 @@ export default {
   name: "app",
   data: function() {
     return {
-      showFeed: true
+      showFeed: true,
+      text: ""
     };
   }
 };
@@ -47,10 +52,14 @@ export default {
   flex-direction: column;
 }
 
+.input-group {
+  margin: 1em;
+}
+
 #app {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "topbar topbar topbar" "main main main";
+  grid-template-areas: "topbar . ." "main main main";
 }
 </style>

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { daysAgo } from "../../utils/format";
+import { daysAgo } from "../../utils/utils";
 export default {
   props: {
     event: { required: true }

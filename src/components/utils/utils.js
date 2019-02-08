@@ -20,8 +20,30 @@ const daysAgo = (isoDate) => {
     return diff === 0 ? `today` : `${diff} day${isPlural} ago`;
 }
 
+// @see https://davidwalsh.name/javascript-debounce-function
+
+const debounce = (func, wait, immediate) => {
+    let timeout;
+    return () => {
+        let delay = () => {
+            timeout = null;
+            if (!immediate) {
+                func()
+            }
+        }
+        let callNow = immediate && !timeout;
+        clearTimeout(timeout)
+        timeout = setTimeout(delay, wait)
+        if (callNow) {
+            func()
+        }
+
+    }
+
+}
 export {
     daysAgo,
+    debounce,
     hash,
     branch,
 }
