@@ -1,5 +1,7 @@
 [![License](https://img.shields.io/npm/l/vue-github.svg?style=flat)](https://github.com/harps116/vue-github/blob/master/LICENSE.md)
 
+[![Version](https://img.shields.io/npm/v/vue-github.svg?style=flat)](https://img.shields.io/npm/v/vue-github.svg?style=flat)
+
 ![](https://github.com/harps116/vue-github/raw/master/static/vue-github-screenshot.png)
 
 ## Installation
