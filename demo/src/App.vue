@@ -1,22 +1,47 @@
 <template>
   <div id="app">
-    <vue-github username="harps116"/>
+    <div class="topbar">
+      <input type="checkbox" id="checkbox" v-model="showFeed">
+      <label for="checkbox">Show Feed: {{ showFeed }}</label>
+    </div>
+    <div class="main">
+      <div class="vue-github-wrapper">
+        <vue-github :showFeed="showFeed" username="harps116"/>
+      </div>
+    </div>
   </div>
 </template>
 <script>
-
 export default {
   name: "app",
+  data: function() {
+    return {
+      showFeed: true
+    };
+  }
 };
 </script>
 
 <style>
+.topbar {
+  grid-area: topbar;
+}
+
+.main {
+  grid-area: main;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.vue-github-wrapper {
+  width: 50%;
+}
+
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "topbar topbar topbar" "main main main";
 }
 </style>

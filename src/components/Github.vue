@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div v-if="loading">
+    <div v-if="loading" class="loading-wrapper">
       <img
         src="https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif"
         class="spinner"
@@ -14,7 +14,7 @@
       <div class="activity-calendar-wrapper">
         <div v-html="this.rawCalendar.innerHTML"></div>
 
-        <github-feed username="harps116"></github-feed>
+        <github-feed v-if="showFeed" username="harps116"></github-feed>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ export default {
     username: { String, required: true },
     text: String,
     proxy: Function,
-    stats: { Boolean, default: true }
+    showFeed: { Boolean, default: true }
   },
   components: {
     GithubFeed
@@ -123,12 +123,13 @@ a {
   min-height: 243px;
   text-align: center;
   margin: 0 auto;
-  width: 50%;
+  width: 90%;
   padding: 1em;
 }
 
 .calendar-graph text {
-  &.wday, &.month {
+  &.wday,
+  &.month {
     font-size: 10px;
     fill: #aaa;
   }
@@ -156,7 +157,4 @@ a {
   width: 100%;
   height: 26px;
 }
-
-
-
 </style>
