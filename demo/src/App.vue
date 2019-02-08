@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="topbar">
+    <div class="sidebar">
       <div class="inputs">
         <div class="input-group">
           <input type="checkbox" id="checkbox" v-model="showFeed">
@@ -31,9 +31,10 @@ export default {
 };
 </script>
 
-<style>
-.topbar {
-  grid-area: topbar;
+<style lang="scss">
+$grey: #dddddd;
+.sidebar {
+  grid-area: sidebar;
 }
 
 .main {
@@ -53,13 +54,14 @@ export default {
 }
 
 .input-group {
-  margin: 0.2em;
+  padding: 1em;
+  border: 1px solid $grey;
 }
 
 #app {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "topbar main main main" "topbar main main main";
+  grid-template-areas: "sidebar main main main" "sidebar main main main";
 }
 </style>
