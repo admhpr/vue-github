@@ -25,7 +25,8 @@ export default {
   data: function() {
     return {
       showFeed: true,
-      text: ""
+      text: "",
+      username: "harps116"
     };
   }
 };
@@ -46,6 +47,7 @@ $grey: #dddddd;
 
 .vue-github-wrapper {
   margin-top: 1em;
+  width: 100%;
 }
 
 .inputs {

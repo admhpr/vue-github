@@ -58,6 +58,7 @@ export default {
         function(url) {
           return "https://urlreq.appspot.com/req?method=GET&url=" + url;
         };
+
       // We need a proxy for CORS
       // Thanks, @izuzak (https://github.com/izuzak/urlreq)
       fetch(proxy(`https://github.com/${this.username}`))
