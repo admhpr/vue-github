@@ -32,7 +32,7 @@ import VueGithub from "vue-github";
 Vue.use(VueGithub);
 ```
 
-Check out the [demo](./demo/src/main.js) in this repo.
+Check out the `main.js` [demo](./demo/src/main.js) in this repo.
 
 In your template you can now use html like this to render the activity feed:
 
