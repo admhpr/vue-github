@@ -67,7 +67,7 @@ Props:
 
 ## Issues
 
-Fill issues [here](https://github.com/harps116/vue-github/issues)
+File issues [here](https://github.com/harps116/vue-github/issues)
 
 ## License
 
