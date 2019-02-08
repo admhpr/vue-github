@@ -44,7 +44,7 @@ export default {
 }
 
 .vue-github-wrapper {
-  width: 50%;
+  margin-top: 1em;
 }
 
 .inputs {
@@ -53,13 +53,13 @@ export default {
 }
 
 .input-group {
-  margin: 1em;
+  margin: 0.2em;
 }
 
 #app {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "topbar . ." "main main main";
+  grid-template-areas: "topbar main main main" "topbar main main main";
 }
 </style>

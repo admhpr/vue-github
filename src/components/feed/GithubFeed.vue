@@ -171,6 +171,9 @@ $font-size: 13px;
     margin-left: 0;
     text-align: left;
   }
+  &:nth-child(2) {
+    flex: 0 1 30px;
+  }
   &:last-child {
     margin-right: 0;
     text-align: left;

@@ -11,12 +11,12 @@
           target="_blank"
         >{{branch(event.payload.ref)}}</a>
         on
+        <a
+          class="event-link"
+          :href="'https://github.com/' + event.repo.name"
+          target="_blank"
+        >{{event.repo.name}}</a>
       </div>
-      <a
-        class="event-link"
-        :href="'https://github.com/' + event.repo.name"
-        target="_blank"
-      >{{event.repo.name}}</a>
     </div>
     <li
       slot="list-info"
