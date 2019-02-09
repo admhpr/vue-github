@@ -44,7 +44,7 @@ export default {
     };
   },
   beforeUpdate() {
-    debounce(this.createCalendar(), 100);
+    this.createCalendar();
   },
   mounted() {
     this.createCalendar();
