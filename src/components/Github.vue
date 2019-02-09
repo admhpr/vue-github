@@ -86,6 +86,7 @@ export default {
       div.innerHTML = body;
       let cal = div.querySelector(".js-yearly-contributions");
       cal.querySelector(".float-left.text-gray").innerHTML = summary;
+      cal.querySelector(".float-left.text-gray").className = "";
       cal.querySelector(".contrib-legend").innerHTML = "";
       this.rawCalendar = cal;
     },
