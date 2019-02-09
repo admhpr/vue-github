@@ -23,6 +23,7 @@
 <script>
 import parse from "github-calendar-parser";
 import GithubFeed from "./feed/GithubFeed.vue";
+import { debounce } from "./utils/utils";
 export default {
   props: {
     username: { String, required: true },
@@ -42,11 +43,17 @@ export default {
       builtCalendar: ""
     };
   },
-  beforeUpdate() {
-    this.createCalendar();
-  },
   mounted() {
     this.createCalendar();
+  },
+  watch: {
+    text: {
+      handler(val, oldVal) {
+        if (val !== oldVal) {
+          debounce(this.createCalendar(), 100);
+        }
+      }
+    }
   },
   methods: {
     createCalendar: function() {
