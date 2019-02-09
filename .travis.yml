@@ -8,3 +8,5 @@ deploy:
   script: "npm run release"
   email: adam@harpur.com
   api_key: $NPM_TOKEN
+  on:
+    branch: master
