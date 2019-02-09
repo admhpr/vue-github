@@ -18,12 +18,7 @@
         >{{event.repo.name}}</a>
       </div>
     </div>
-    <li
-      slot="list-info"
-      v-for="commit in event.payload.commits"
-      :key="commit.id"
-      class="event-detail"
-    >
+    <li slot="list-info" v-for="commit in event.payload.commits" :key="commit.id">
       <span class="event-octicon octicon octicon-git-commit dashboard-event-icon"></span>
       <a
         :href="'https://github.com/' + event.repo.name + '/commit/' + commit.sha"

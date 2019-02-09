@@ -152,8 +152,13 @@ $font-size: 13px;
   color: $blue;
 }
 
-.event-detail {
-  text-align: center;
+.feed {
+  ul {
+    padding-left: 40%;
+  }
+  li {
+    text-align: left;
+  }
 }
 
 .row {
