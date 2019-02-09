@@ -85,8 +85,10 @@ export default {
         }" target="blank">@${this.username}</a>`;
       div.innerHTML = body;
       let cal = div.querySelector(".js-yearly-contributions");
-      cal.querySelector(".float-left.text-gray").innerHTML = summary;
-      cal.querySelector(".float-left.text-gray").className = "";
+      let summaryText = cal.querySelector(".float-left.text-gray");
+      summaryText.innerHTML = summary;
+      summaryText.className = "";
+      summaryText.className = "summary-text";
       cal.querySelector(".contrib-legend").innerHTML = "";
       this.rawCalendar = cal;
     },
@@ -176,5 +178,9 @@ a {
   text-align: center;
   width: 100%;
   height: 26px;
+}
+
+.summary-text {
+  margin-top: 1em;
 }
 </style>

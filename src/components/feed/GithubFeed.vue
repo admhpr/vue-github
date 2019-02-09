@@ -152,6 +152,10 @@ $font-size: 13px;
   color: $blue;
 }
 
+.event-detail {
+  text-align: center;
+}
+
 .row {
   display: flex;
   flex-flow: row wrap;
