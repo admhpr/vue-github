@@ -1,15 +1,13 @@
 {
   "name": "vue-github",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "vue your github activity and calendar",
   "author": {
     "name": "Adam Harpur",
     "email": "adam@harpur.io",
     "url": "https://adam.harpur.io"
   },
-  "bugs": {
-    "url": "https://github.com/harps116/vue-github/issues"
-  },
+  "bugs": "https://github.com/harps116/vue-github/issues",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -18,7 +16,6 @@
     "release": "npm version patch && npm run build:npm && npm publish"
   },
   "repository": "github.com:harps116/vue-github.git",
-  "bugs": "https://github.com/harps116/vue-github/issues",
   "keywords": [
     "vue",
     "github",
