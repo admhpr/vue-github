@@ -12,7 +12,7 @@
     </div>
     <div v-if="!loading">
       <div class="activity-calendar-wrapper">
-        <div v-html="this.rawCalendar.innerHTML"></div>
+        <div v-if="showCalendar" v-html="this.rawCalendar.innerHTML"></div>
 
         <github-feed v-if="showFeed" username="harps116"></github-feed>
       </div>
@@ -29,7 +29,8 @@ export default {
     username: { String, required: true },
     text: String,
     proxy: Function,
-    showFeed: { Boolean, default: true }
+    showFeed: { Boolean, default: true },
+    showCalendar: { Boolean, default: true }
   },
   components: {
     GithubFeed

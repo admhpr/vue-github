@@ -3,7 +3,11 @@
     <div class="sidebar">
       <div class="inputs">
         <div class="input-group">
-          <input type="checkbox" id="checkbox" v-model="showFeed">
+          <input type="checkbox" v-model="showCalendar">
+          <label for="checkbox">Show Calendar: {{ showCalendar }}</label>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" v-model="showFeed">
           <label for="checkbox">Show Feed: {{ showFeed }}</label>
         </div>
         <div class="input-group">
@@ -14,7 +18,12 @@
     </div>
     <div class="main">
       <div class="vue-github-wrapper">
-        <vue-github :text="text" :showFeed="showFeed" username="harps116"/>
+        <vue-github
+          :text="text"
+          :showFeed="showFeed"
+          :showCalendar="showCalendar"
+          username="harps116"
+        />
       </div>
     </div>
   </div>
@@ -24,6 +33,7 @@ export default {
   name: "app",
   data: function() {
     return {
+      showCalendar: true,
       showFeed: true,
       text: "",
       username: "harps116"
