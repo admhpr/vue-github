@@ -60,11 +60,12 @@ In your template you can now use html like this to render the activity feed:
 
 Props:
 
-| name     | type    | default                                                                 | description                       |
-| -------- | ------- | ----------------------------------------------------------------------- | --------------------------------- |
-| username | String  | required                                                                | Github username                   |
-| text     | String  | Summary of pull requests, issues opened, and commits made by {username} | Summary text                      |
-| showFeed | Boolean | true                                                                    | Whether to show the activity feed |
+| name         | type    | default                                                                 | description                       |
+| ------------ | ------- | ----------------------------------------------------------------------- | --------------------------------- |
+| username     | String  | required                                                                | Github username                   |
+| text         | String  | Summary of pull requests, issues opened, and commits made by {username} | Summary text                      |
+| showCalendar | Boolean | true                                                                    | Whether to show the calendar      |
+| showFeed     | Boolean | true                                                                    | Whether to show the activity feed |
 
 ## Issues
 
