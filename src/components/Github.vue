@@ -133,7 +133,9 @@ h3 {
 a {
   color: $green;
 }
-
+.border {
+  border: none;
+}
 .activity-calendar-wrapper {
   font-family: Helvetica, arial;
   border: 1px solid $grey;
@@ -142,7 +144,7 @@ a {
   text-align: center;
   margin: 0 auto;
   width: 90%;
-  padding: 1em;
+  padding: 1.5em;
 }
 
 .loading-wrapper {
