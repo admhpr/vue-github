@@ -133,8 +133,9 @@ h3 {
 a {
   color: $green;
 }
+// override github class
 .border {
-  border: none;
+  border: none !important;
 }
 .activity-calendar-wrapper {
   font-family: Helvetica, arial;
