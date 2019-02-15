@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="vue-github-wrapper">
     <div v-if="loading" class="loading-wrapper">
       <img
         src="https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif"
@@ -126,71 +126,73 @@ export default {
 $green: #42b983;
 $grey: #dddddd;
 
-h3 {
-  margin: 40px 0 0;
-}
-
-a {
-  color: $green;
-}
-// override github class
-.border {
-  border: none !important;
-}
-.activity-calendar-wrapper {
-  font-family: Helvetica, arial;
-  border: 1px solid $grey;
-  border-radius: 3px;
-  min-height: 243px;
-  text-align: center;
-  margin: 0 auto;
-  width: 90%;
-  padding: 1.5em;
-}
-
-.loading-wrapper {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  img {
-    max-width: 75px;
-    margin: auto;
+.vue-github-wrapper {
+  h3 {
+    margin: 40px 0 0;
   }
-}
 
-.calendar-graph text {
-  &.wday,
-  &.month {
-    font-size: 10px;
-    fill: darken($grey, 10);
+  a {
+    color: $green;
   }
-}
+  // override github class
+  .border {
+    border: none !important;
+  }
+  .activity-calendar-wrapper {
+    font-family: Helvetica, arial;
+    border: 1px solid $grey;
+    border-radius: 3px;
+    min-height: 243px;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+    padding: 1.5em;
+  }
 
-.text-small {
-  font-size: 12px;
-  color: darken($grey, 30);
-}
+  .loading-wrapper {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    img {
+      max-width: 75px;
+      margin: auto;
+    }
+  }
 
-.calendar-graph {
-  padding: 5px 0 0;
-  text-align: center;
-}
+  .calendar-graph text {
+    &.wday,
+    &.month {
+      font-size: 10px;
+      fill: darken($grey, 10);
+    }
+  }
 
-.calendar img.spinner {
-  width: 70px;
-  margin-top: 50px;
-  min-height: 70px;
-}
+  .text-small {
+    font-size: 12px;
+    color: darken($grey, 30);
+  }
 
-.contrib-footer {
-  padding: 1em;
-  text-align: center;
-  width: 100%;
-  height: 26px;
-}
+  .calendar-graph {
+    padding: 5px 0 0;
+    text-align: center;
+  }
 
-.summary-text {
-  margin-top: 1em;
+  .calendar img.spinner {
+    width: 70px;
+    margin-top: 50px;
+    min-height: 70px;
+  }
+
+  .contrib-footer {
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+    height: 26px;
+  }
+
+  .summary-text {
+    margin-top: 1em;
+  }
 }
 </style>
