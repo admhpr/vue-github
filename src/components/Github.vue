@@ -144,9 +144,8 @@ $grey: #dddddd;
     border-radius: 3px;
     min-height: 243px;
     text-align: center;
-    margin: 0 auto;
-    width: 90%;
-    padding: 1.5em;
+    width: 100%;
+    padding: 1.8em;
   }
 
   .loading-wrapper {
