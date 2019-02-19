@@ -181,16 +181,23 @@ $font-size: 13px;
     text-align: left;
   }
   &:nth-child(2) {
-    flex: 0 1 30px;
+    flex: 0 1 40px;
   }
   &:last-child {
     margin-right: 0;
     text-align: left;
   }
+  li {
+    list-style: none;
+  }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
   .event-octicon {
     display: none !important;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>
