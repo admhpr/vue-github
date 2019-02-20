@@ -13,7 +13,7 @@
     <div v-if="!loading">
       <div class="activity-calendar-wrapper">
         <div v-if="showCalendar" v-html="this.rawCalendar.innerHTML"></div>
-
+        <br>
         <github-feed v-if="showFeed" username="harps116"></github-feed>
       </div>
     </div>

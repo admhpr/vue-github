@@ -148,17 +148,15 @@ $font-size: 13px;
   color: $grey;
   margin-right: 10px;
 }
-.event-link {
-  color: $blue;
-}
-
 .feed {
-  ul {
-    padding-left: 40%;
-  }
   li {
     text-align: left;
+    list-style: none;
   }
+}
+
+.feed-list {
+  border-bottom: 1px solid lighten($grey, 40);
 }
 
 .row {
@@ -181,23 +179,19 @@ $font-size: 13px;
     text-align: left;
   }
   &:nth-child(2) {
-    flex: 0 1 40px;
   }
   &:last-child {
     margin-right: 0;
     text-align: left;
   }
-  li {
-    list-style: none;
-  }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
-  .event-octicon {
-    display: none !important;
-  }
   .row {
     display: flex;
     flex-direction: column;
+  }
+  .header {
+    display: none !important;
   }
 }
 </style>
