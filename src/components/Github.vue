@@ -183,12 +183,12 @@ $grey: #dddddd;
     min-height: 70px;
   }
 
-  .contrib-footer {
-    padding: 1em;
-    text-align: center;
-    width: 100%;
-    height: 26px;
-  }
+  // .contrib-footer {
+  //   padding: 1em;
+  //   text-align: center;
+  //   width: 100%;
+  //   height: 26px;
+  // }
 
   .summary-text {
     margin-top: 1em;
