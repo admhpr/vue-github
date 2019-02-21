@@ -50,14 +50,14 @@ $grey: #dddddd;
 
 .main {
   grid-area: main;
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
 }
 
 .vue-github-wrapper {
-  margin-top: 1em;
   width: 100%;
+  margin-left: 1em;
 }
 
 .inputs {
