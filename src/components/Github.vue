@@ -2,7 +2,7 @@
   <div class="vue-github-wrapper">
     <div v-if="loading" class="loading-wrapper">
       <img
-        src="https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif"
+        src="https://github.githubassets.com/images/spinners/octocat-spinner-128.gif"
         class="spinner"
       >
       <p class="spinner-text monospace">
