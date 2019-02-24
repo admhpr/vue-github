@@ -6,6 +6,8 @@
 [![License](https://img.shields.io/npm/l/vue-github.svg?style=flat)](https://github.com/harps116/vue-github/blob/master/LICENSE.md)
 [![Version](https://img.shields.io/npm/v/vue-github.svg?style=flat)](https://img.shields.io/npm/v/vue-github.svg?style=flat)
 
+[![NPM](https://nodei.co/npm/vue-github.png)](https://nodei.co/npm/vue-github/)
+
 [Demo](https://harps116.github.io/vue-github/)
 
 ![](https://github.com/harps116/vue-github/raw/master/static/vue-github-screenshot.png)
@@ -48,7 +50,7 @@ import the style into your main `vue` file (most likely `App.vue`) if you want t
 
 ```html
 <style>
-  @import url("https://unpkg.com/vue-github@0.9.24/dist/vueGithub.css");
+  @import url("https://unpkg.com/vue-github@0.9.25/dist/vueGithub.css");
 </style>
 ```
 
