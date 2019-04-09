@@ -8,7 +8,7 @@
       <a>{{event.actor.login}}</a>
       created {{event.payload.ref_type}}
       <span v-if="event.payload.ref_type!== 'repository'">
-        <a class="event-link" :href="link(event)" target="_blank">{{event.payload.ref}}</a>
+        <a v-if="link" class="event-link" :href="link(event)" target="_blank">{{event.payload.ref}}</a>
         at
       </span>
       <a
