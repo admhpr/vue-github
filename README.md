@@ -50,7 +50,7 @@ import the style into your main `vue` file (most likely `App.vue`) if you want t
 
 ```html
 <style>
-  @import url("https://unpkg.com/vue-github@0.9.25/dist/vueGithub.css");
+  @import url("https://unpkg.com/vue-github@0.10.3/dist/vueGithub.css");
 </style>
 ```
 
