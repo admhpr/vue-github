@@ -144,10 +144,9 @@ $font-size: 13px;
   font-family: Helvetica, arial, freesans, clean, sans-serif;
 }
 
-.event-octicon,
-.dashboard-event-icon {
+.event-octicon {
   color: $grey;
-  margin-right: 10px;
+  margin-right: 10px !important;
 }
 .feed {
   li {
