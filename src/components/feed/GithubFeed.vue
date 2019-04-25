@@ -144,7 +144,8 @@ $font-size: 13px;
   font-family: Helvetica, arial, freesans, clean, sans-serif;
 }
 
-.event-octicon {
+.event-octicon,
+.dashboard-event-icon {
   color: $grey;
   margin-right: 10px;
 }
