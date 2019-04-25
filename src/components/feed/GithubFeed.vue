@@ -144,12 +144,11 @@ $font-size: 13px;
   font-family: Helvetica, arial, freesans, clean, sans-serif;
 }
 
-li {
-  span .event-octicon {
-    color: $grey;
-    margin-right: 10px !important;
-  }
+.event-octicon {
+  color: $grey;
+  margin-right: 10px !important;
 }
+
 .feed {
   li {
     text-align: left;
