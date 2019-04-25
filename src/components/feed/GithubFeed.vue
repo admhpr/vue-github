@@ -144,9 +144,11 @@ $font-size: 13px;
   font-family: Helvetica, arial, freesans, clean, sans-serif;
 }
 
-.event-octicon {
-  color: $grey;
-  margin-right: 10px !important;
+li {
+  span .event-octicon {
+    color: $grey;
+    margin-right: 10px !important;
+  }
 }
 .feed {
   li {
