@@ -4,7 +4,6 @@
 
 [![Build](https://img.shields.io/travis/harps116/vue-github.svg?style=flat)](https://img.shields.io/travis/harps116/vue-github.svg?style=flat)
 [![License](https://img.shields.io/npm/l/vue-github.svg?style=flat)](https://github.com/harps116/vue-github/blob/master/LICENSE.md)
-[![Version](https://img.shields.io/npm/v/vue-github.svg?style=flat)](https://img.shields.io/npm/v/vue-github.svg?style=flat)
 
 [![NPM](https://nodei.co/npm/vue-github.png)](https://nodei.co/npm/vue-github/)
 
