@@ -43,7 +43,7 @@ import VueGithub from "vue-github";
 Vue.use(VueGithub);
 ```
 
-Check out the `main.js` [demo](https://github.com/harps116/vue-github/blob/master/demo/src/main.js) in the repo.
+Check out the `main.js` in the [demo repo](https://github.com/harps116/vue-github/blob/master/demo/src/main.js).
 
 import the style into your main `vue` file (most likely `App.vue`) if you want the default css.
 
