@@ -15,7 +15,10 @@
     "build:npm": "vue-cli-service build --target lib --name vueGithub ./src/index.js",
     "release": "npm version patch && npm run build:npm && npm publish"
   },
-  "repository": "github.com:harps116/vue-github.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harps116/vue-github"
+  },
   "keywords": [
     "vue",
     "github",
