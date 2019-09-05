@@ -9,6 +9,11 @@ module.exports = {
     publicPath: "/",
     filename: "build.js"
   },
+  resolve: {
+    alias: {
+      "@utils": path.resolve(__dirname, `../src/components/utils/`)
+    }
+  },
   module: {
     rules: [
       {
