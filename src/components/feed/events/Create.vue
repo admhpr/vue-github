@@ -7,8 +7,8 @@
       ></span>
       <a>{{event.actor.login}}</a>
       created {{event.payload.ref_type}}
-      <span v-if="event.payload.ref_type!== 'repository'">
-        <a v-if="link" class="event-link" :href="link(event)" target="_blank">{{event.payload.ref}}</a>
+      <span v-if="event.payload.ref_type !== 'repository'">
+        <a class="event-link" :href="getLink(event.repo)" target="_blank">{{event.payload.ref}}</a>
         at
       </span>
       <a
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { getLink } from "@utils/utils"
 import EventContainer from "../containers/EventContainer.vue";
 export default {
   props: {
@@ -29,6 +30,9 @@ export default {
   },
   components: {
     EventContainer
+  }, 
+  methods: {
+    getLink
   }
 };
 </script>

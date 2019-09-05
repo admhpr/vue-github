@@ -9,7 +9,7 @@
   },
   "bugs": "https://github.com/harps116/vue-github/issues",
   "scripts": {
-    "dev": "vue-cli-service serve",
+    "dev": "vue-cli-service serve ./demo/src/main.js",
     "build": "vue-cli-service build",
     "build:npm": "vue-cli-service build --target lib --name vueGithub ./src/index.js",
     "lint": "vue-cli-service lint",
