@@ -40,19 +40,22 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "@babel/runtime-corejs3": "^7.12.5",
     "@vue/cli-plugin-babel": "^4.0.5",
     "@vue/cli-plugin-eslint": "^4.1.1",
     "@vue/cli-service": "^4.0.5",
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^26.0.1",
+    "core-js": "^3.8.2",
     "eslint": "^7.12.1",
     "eslint-plugin-vue": "^7.1.0",
     "github-calendar-parser": "^1.1.10",
     "jest": "^26.0.1",
     "jest-serializer-vue": "^2.0.2",
     "jest-transform-stub": "^2.0.0",
-    "node-sass": "^5.0.0",
+    "node-sass": "^4.14.1",
     "sass-loader": "^10.0.1",
     "vue-jest": "^3.0.4",
     "vue-template-compiler": "^2.6.10"
