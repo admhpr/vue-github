@@ -6,11 +6,11 @@
           <span class="github-octicon octicon octicon-mark-github"></span>
         </div>
         <a :href="user.html_url" target="_blank" class="github-profile">
-          <div>{{user.name}}</div>
-          <div class="github-username">{{user.username}}</div>
+          <div>{{ user.name }}</div>
+          <div class="github-username">{{ user.username }}</div>
         </a>
         <div class="avatar-wrapper">
-          <img class="avatar" :src="user.avatar_url">
+          <img class="avatar" :src="user.avatar_url" />
         </div>
       </div>
     </div>
@@ -24,23 +24,23 @@
 </template>
 
 <script>
-import service from "../../services/GithubService";
+import service from "../../services/githubService"
 
-import CommitCommentEvent from "./events/CommitComment.vue";
-import CreateEvent from "./events/Create.vue";
-import DeleteEvent from "./events/Delete.vue";
-import ForkEvent from "./events/Fork.vue";
-import IssuesEvent from "./events/Issues.vue";
-import IssuesCommentEvent from "./events/IssuesComment.vue";
-import PubliEvent from "./events/Public.vue";
-import PushEvent from "./events/Push.vue";
-import PullRequestEvent from "./events/PullRequest.vue";
-import WatchEvent from "./events/Watch.vue";
+import CommitCommentEvent from "./events/CommitComment.vue"
+import CreateEvent from "./events/Create.vue"
+import DeleteEvent from "./events/Delete.vue"
+import ForkEvent from "./events/Fork.vue"
+import IssuesEvent from "./events/Issues.vue"
+import IssuesCommentEvent from "./events/IssuesComment.vue"
+import PubliEvent from "./events/Public.vue"
+import PushEvent from "./events/Push.vue"
+import PullRequestEvent from "./events/PullRequest.vue"
+import WatchEvent from "./events/Watch.vue"
 
 export default {
   name: "github-feed",
   props: {
-    username: { String, required: true }
+    username: { String, required: true },
   },
   components: {
     CommitCommentEvent,
@@ -52,34 +52,34 @@ export default {
     PubliEvent,
     PushEvent,
     PullRequestEvent,
-    WatchEvent
+    WatchEvent,
   },
   data: () => ({
     user: {},
     events: [],
     loading: false,
-    error: false
+    error: false,
   }),
   async created() {
     try {
-      await service.user(this.username).then(async response => {
-        this.user = await response.json();
-      });
+      await service.user(this.username).then(async (response) => {
+        this.user = await response.json()
+      })
     } catch (e) {
-      this.loading = false;
-      throw e;
+      this.loading = false
+      throw e
     }
     try {
-      await service.events(this.username).then(async events => {
-        this.loading = false;
-        this.events = await events.json();
-      });
+      await service.events(this.username).then(async (events) => {
+        this.loading = false
+        this.events = await events.json()
+      })
     } catch (e) {
-      this.loading = false;
-      throw e;
+      this.loading = false
+      throw e
     }
-  }
-};
+  },
+}
 </script>
 
 <style lang="scss">
