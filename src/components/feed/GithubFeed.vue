@@ -32,7 +32,7 @@ import DeleteEvent from "./events/Delete.vue"
 import ForkEvent from "./events/Fork.vue"
 import IssuesEvent from "./events/Issues.vue"
 import IssuesCommentEvent from "./events/IssuesComment.vue"
-import PubliEvent from "./events/Public.vue"
+import PublicEvent from "./events/Public.vue"
 import PushEvent from "./events/Push.vue"
 import PullRequestEvent from "./events/PullRequest.vue"
 import WatchEvent from "./events/Watch.vue"
@@ -49,7 +49,7 @@ export default {
     ForkEvent,
     IssuesEvent,
     IssuesCommentEvent,
-    PubliEvent,
+    PublicEvent,
     PushEvent,
     PullRequestEvent,
     WatchEvent,
