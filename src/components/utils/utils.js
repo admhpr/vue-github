@@ -22,20 +22,20 @@ function daysAgo(isoDate) {
 
 // @see https://davidwalsh.name/javascript-debounce-function
 
-function debounce(func, wait, immediate) {
+function debounce(fn, wait, immediate) {
   let timeout
   return () => {
     let delay = () => {
       timeout = null
       if (!immediate) {
-        func()
+        fn()
       }
     }
     let callNow = immediate && !timeout
     clearTimeout(timeout)
     timeout = setTimeout(delay, wait)
     if (callNow) {
-      func()
+      fn()
     }
   }
 }
